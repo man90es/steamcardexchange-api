@@ -1,7 +1,12 @@
 import puppeteer from "puppeteer"
 
 export default async function getAppData(appId) {
-	const browser = await puppeteer.launch()
+	const browser = await puppeteer.launch({
+		args: [
+			'--no-sandbox',
+			'--disable-setuid-sandbox',
+		],
+	})
 	const page = await browser.newPage()
 	await page.goto(`https://www.steamcardexchange.net/index.php?inventorygame-appid-${appId}`)
 
