@@ -1,18 +1,18 @@
 # SteamCardExchange-API
-[SteamCardExchange.net](https://www.steamcardexchange.net/) is a service that allows its users to safely exchange their [Steam Trading Cards](https://steamcommunity.com/tradingcards/) for virtual currency and vice versa. This repository contains the source code for an unofficial REST API server that relies on website scraping and allows you to easily access such data as: which cards are in stock, how much currency you can get from turning them in, and how much they cost to buy.
+[SteamCardExchange.net](https://www.steamcardexchange.net/) is a service that allows its users to safely exchange their [Steam Trading Cards](https://steamcommunity.com/tradingcards/) for virtual currency and vice versa. This repository contains the source code for an unofficial REST API server. It relies on web scraping and allows you to easily access such data as the number of cards in stock, how much currency you can get from turning them in and how much they cost to buy.
 
 
 ## Building and running
 1. Clone the repository;
-2. From the root directory of the cloned repository, run "`yarn install`" to install the dependencies;
-3. Run "`yarn build`" to transpile the code;
-4. Run "`yarn start`" to start the server.
+2. From the root directory of the cloned repository, run `pnpm install` to install the dependencies (you can also use NPM or Yarn);
+3. Run `pnpm build` to transpile the code;
+4. Run `pnpm start` to start the server.
 
 
 ## Configuration
 By default, the server starts on port `8002`. If the aforementioned port is taken by another process, it will exit with an error. You can configure it to use another port (e.g. `8003`) in one of two ways:
-* Set the environment variable by hand: `PORT=8003 yarn start`;
-* Copy existing "`.env.template`" file into "`.env`", change the contents to "`PORT=8003`" and then execute "`yarn start`".
+* Set the environment variable by hand: `PORT=8003 pnpm start`;
+* Copy existing "`.env.template`" file into "`.env`", change the contents to `PORT=8003` and then execute `pnpm start`.
 
 
 ## Usage
@@ -21,7 +21,7 @@ Send `GET` requests to `http://127.0.0.1:8002/apps/570`, where:
 * `8002` is the port that you configured (leave it as is if you didn't configure anything);
 * `570` is the ID of a game on Steam that you're interested in.
 
-You can get game IDs from the URIs of their store pages. E.g, Dota 2 (URI: `https://store.steampowered.com/app/570/Dota_2`) has ID `570` which was used in the example.
+You can get game IDs from the URIs of their store pages. E.g, Dota 2 (URI: `https://store.steampowered.com/app/570/Dota_2`) has ID `570` which is used in this example.
 
 Here's an example of how the responce may look:
 ```JSON
@@ -37,7 +37,7 @@ Here's an example of how the responce may look:
 ]
 ```
 
-Explanation:
+Response explanation:
 | Property | Possible values | Meaning                                                                                                 |
 | -------- | --------------- | ------------------------------------------------------------------------------------------------------- |
 | name     | Any string      | The title of the card                                                                                   |
