@@ -2,8 +2,8 @@
 	"license": "UNLICENSED",
 	"scripts": {
 		"build": "tsc",
-		"start:dev": "concurrently \"tsc -w\" \"nodemon --signal SIGTERM dist/js/app.js\"",
-		"start": "node ./dist/js/app.js"
+		"start:dev": "concurrently \"tsc -w\" \"nodemon --signal SIGTERM dist/app.js\"",
+		"start": "node ./dist/app.js"
 	},
 	"dependencies": {
 		"dotenv": "^10.0.0",
